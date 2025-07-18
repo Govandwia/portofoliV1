@@ -27,14 +27,25 @@ export default function Projects() {
       }
     },
     {
+      id: 'portfolio-v1',
+      title: 'Portfolio V1 ',
+      subtitle: 'Modern Portfolio Website with Contact System',
+      description: 'A responsive portfolio website built with Next.js showcasing my journey as a Software Engineering student, featuring interactive components, project showcases, and a functional contact form with email integration.',
+      icon: <Globe className="w-6 h-6" />,
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Nodemailer'],
+      roles: ['Full-Stack Developer', 'UI/UX Designer'],
+      githubUrl: 'https://github.com/Govandwia/portofoliV1.git',
+      liveUrl: '#'
+    },
+    {
       id: 'calories-tracker',
       title: 'AI-Powered Calories Tracker',
       subtitle: 'Smart Nutrition Tracking with AI Recommendations',
       description: 'An interactive web application for daily calorie tracking that connects to the USDA Food API for accurate nutritional data and features a Gemini API-powered chatbot for personalized meal recommendations.',
       icon: <Globe className="w-6 h-6" />,
-      technologies: ['Next.js', 'React', 'JavaScript', 'USDA Food API', 'Gemini API'],
+      technologies: ['laravel', 'PHP', 'JavaScript', 'USDA Food API', 'Gemini API'],
       roles: ['Full-Stack Developer', 'API Integration Specialist'],
-      githubUrl: '#',
+      githubUrl: 'https://github.com/Govandwia/frontend_calories_tracker.git',
       liveUrl: '#'
     },
     {
@@ -45,7 +56,7 @@ export default function Projects() {
       icon: <Brain className="w-6 h-6" />,
       technologies: ['Python', 'Scikit-learn', 'Pandas', 'TensorFlow', 'Jupyter'],
       roles: ['Data Scientist', 'ML Engineer'],
-      githubUrl: '#'
+      githubUrl: 'https://colab.research.google.com/drive/1ESbVjYgYPeIzwoAiyIdyppJvzYcAABMl?usp=sharing'
     },
     {
       id: 'meli',
@@ -65,7 +76,7 @@ export default function Projects() {
       icon: <ShoppingCart className="w-6 h-6" />,
       technologies: ['PHP', 'Laravel', 'MySQL', 'HTML/CSS', 'Bootstrap'],
       roles: ['full-stack developer'],
-      githubUrl: '#'
+      githubUrl: 'https://github.com/Govandwia/TUGAS-AKHIR-PPW1.git'
     },
     {
       id: 'pirate-bros',

@@ -1,37 +1,64 @@
 import { NextRequest, NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
 export async function POST(request: NextRequest) {
   try {
     const { name, email, message } = await request.json();
 
-    // Validate the input
+    // Validasi input
     if (!name || !email || !message) {
       return NextResponse.json(
-        { error: 'All fields are required' },
+        { error: 'Semua field harus diisi' },
         { status: 400 }
       );
     }
 
-    // In a real application, you would send an email here
-    // For now, we'll just log the message and return success
-    console.log('Contact form submission:', {
-      name,
-      email,
-      message,
-      timestamp: new Date().toISOString()
+    // Cek apakah email sudah dikonfigurasi
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS || process.env.EMAIL_PASS === 'your_16_character_app_password') {
+      return NextResponse.json(
+        { error: 'Email belum dikonfigurasi' },
+        { status: 500 }
+      );
+    }
+
+    // Konfigurasi transporter untuk Gmail
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
     });
 
-    // Simulate email sending delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // Template email sederhana
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: 'govandwi01@gmail.com',
+      subject: `[PORTFOLIO] Pesan dari ${name}`,
+      html: `
+        <h3>Pesan Baru dari Portfolio Website</h3>
+        <p><strong>Nama:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Pesan:</strong></p>
+        <p>${message}</p>
+        <hr>
+        <p><em>Dikirim pada: ${new Date().toLocaleString('id-ID')}</em></p>
+      `,
+      replyTo: email,
+    };
+
+    // Kirim email
+    await transporter.sendMail(mailOptions);
 
     return NextResponse.json(
-      { message: 'Message sent successfully!' },
+      { message: 'Email berhasil dikirim' },
       { status: 200 }
     );
+
   } catch (error) {
-    console.error('Error processing contact form:', error);
+    console.error('Error sending email:', error);
     return NextResponse.json(
-      { error: 'Failed to send message' },
+      { error: 'Gagal mengirim email. Silakan coba lagi.' },
       { status: 500 }
     );
   }

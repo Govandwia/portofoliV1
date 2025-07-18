@@ -9,15 +9,15 @@ export function FunStats() {
   const stats = [
     {
       icon: <Code className="w-8 h-8 text-blue-600" />,
-      value: 15,
-      suffix: '+',
+      value: 6,
+      suffix: '',
       label: 'Projects Completed',
       color: 'bg-blue-50 dark:bg-blue-900/20'
     },
     {
       icon: <Coffee className="w-8 h-8 text-amber-600" />,
       value: 1247,
-      suffix: '',
+      suffix: '+',
       label: 'Cups of Coffee',
       color: 'bg-amber-50 dark:bg-amber-900/20'
     },

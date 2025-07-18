@@ -246,7 +246,7 @@ export function Hero() {
                     {[
                       { label: 'Education', value: 'UGM', delay: 1.4 },
                       { label: 'GPA', value: '3.72/4.00', delay: 1.6 },
-                      { label: 'Experience', value: '3+ Years', delay: 1.8 }
+                      { label: 'Experience', value: '2+ Years', delay: 1.8 }
                     ].map((item, index) => (
                       <motion.div 
                         key={item.label}
@@ -269,7 +269,10 @@ export function Hero() {
                   >
                     <Button 
                       className="w-full mt-6 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white" 
-                      onClick={handleCelebration}
+                      onClick={() => {
+                        handleCelebration();
+                        window.open('https://drive.google.com/file/d/1j8PkbRKtlQ09MqKxwOs9FqvZpE8srNbF/view?usp=sharing', '_blank');
+                      }}
                     >
                       <Download className="w-4 h-4 mr-2" />
                       Download Resume

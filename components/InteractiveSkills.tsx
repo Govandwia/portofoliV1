@@ -5,6 +5,34 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Code, Users, Wrench, Brain, Trophy, Zap } from 'lucide-react';
+import Image from 'next/image';
+
+// Component for skill icon with fallback
+function SkillIcon({ src, alt, fallback }: { src: string; alt: string; fallback: string }) {
+  const [hasError, setHasError] = useState(false);
+
+  // If it's an emoji (fallback), just return it
+  if (typeof src === 'string' && !src.startsWith('/')) {
+    return <span className="text-xl">{src}</span>;
+  }
+
+  if (hasError) {
+    return <span className="text-xl">{fallback}</span>;
+  }
+
+  return (
+    <div className="w-6 h-6 relative">
+      <Image
+        src={src}
+        alt={alt}
+        width={24}
+        height={24}
+        className="object-contain"
+        onError={() => setHasError(true)}
+      />
+    </div>
+  );
+}
 
 export function InteractiveSkills() {
   const [selectedCategory, setSelectedCategory] = useState('programming');
@@ -16,15 +44,15 @@ export function InteractiveSkills() {
       icon: <Code className="w-5 h-5" />,
       color: 'text-blue-600',
       bgColor: 'bg-blue-50 dark:bg-blue-900/20',
+      barColor: 'bg-blue-600',
       skills: [
-        { name: 'Python', level: 90, icon: '🐍' },
-        { name: 'Java', level: 85, icon: '☕' },
-        { name: 'JavaScript', level: 88, icon: '🟨' },
-        { name: 'PHP', level: 80, icon: '🐘' },
-        { name: 'Kotlin', level: 75, icon: '🤖' },
-        { name: 'SQL', level: 85, icon: '🗃️' },
-        { name: 'Dart', level: 82, icon: '🎯' },
-        { name: 'HTML/CSS', level: 92, icon: '🎨' }
+        { name: 'Python', level: 90, icon: '/icons/skills/python.png', fallback: '🐍' },
+        { name: 'Java', level: 85, icon: '/icons/skills/java.png', fallback: '☕' },
+        { name: 'JavaScript', level: 88, icon: '/icons/skills/javascript.png', fallback: '🟨' },
+        { name: 'PHP', level: 80, icon: '/icons/skills/php.png', fallback: '🐘' },
+        { name: 'Kotlin', level: 75, icon: '/icons/skills/kotlin.png', fallback: '🎯' },
+        { name: 'SQL', level: 85, icon: '/icons/skills/sql.png', fallback: '🗃️' },
+        { name: 'HTML/CSS', level: 92, icon: '/icons/skills/htmlcss.png', fallback: '🌐' }
       ]
     },
     {
@@ -33,14 +61,12 @@ export function InteractiveSkills() {
       icon: <Wrench className="w-5 h-5" />,
       color: 'text-green-600',
       bgColor: 'bg-green-50 dark:bg-green-900/20',
+      barColor: 'bg-green-600',
       skills: [
-        { name: 'Laravel', level: 85, icon: '🔴' },
-        { name: 'Next.js', level: 88, icon: '⚫' },
-        { name: 'React', level: 90, icon: '⚛️' },
-        { name: 'Flutter', level: 82, icon: '💙' },
-        { name: 'TensorFlow', level: 75, icon: '🧠' },
-        { name: 'Scikit-learn', level: 80, icon: '📊' },
-        { name: 'Pandas', level: 85, icon: '🐼' }
+        { name: 'Laravel', level: 85, icon: '/icons/skills/laravel.png', fallback: '🔥' },
+        { name: 'Next.js', level: 88, icon: '/icons/skills/nextjs.png', fallback: '⚛️' },
+        { name: 'TensorFlow', level: 75, icon: '/icons/skills/tensorflow.png', fallback: '🧠' },
+        { name: 'Pandas', level: 85, icon: '/icons/skills/pandas.png', fallback: '🐼' }
       ]
     },
     {
@@ -49,13 +75,14 @@ export function InteractiveSkills() {
       icon: <Users className="w-5 h-5" />,
       color: 'text-purple-600',
       bgColor: 'bg-purple-50 dark:bg-purple-900/20',
+      barColor: 'bg-purple-600',
       skills: [
-        { name: 'Leadership', level: 95, icon: '👑' },
-        { name: 'Project Management', level: 90, icon: '📋' },
-        { name: 'Problem Solving', level: 92, icon: '🧩' },
-        { name: 'Communication', level: 88, icon: '💬' },
-        { name: 'Collaboration', level: 90, icon: '🤝' },
-        { name: 'Analytical Thinking', level: 85, icon: '🔍' }
+        { name: 'Leadership', level: 95, icon: '👥', fallback: '👥' },
+        { name: 'Project Management', level: 90, icon: '📊', fallback: '📊' },
+        { name: 'Problem Solving', level: 92, icon: '🧩', fallback: '🧩' },
+        { name: 'Communication', level: 88, icon: '🗣️', fallback: '🗣️' },
+        { name: 'Collaboration', level: 90, icon: '🤝', fallback: '🤝' },
+        { name: 'Analytical Thinking', level: 85, icon: '🔍', fallback: '🔍' }
       ]
     },
     {
@@ -64,13 +91,14 @@ export function InteractiveSkills() {
       icon: <Brain className="w-5 h-5" />,
       color: 'text-orange-600',
       bgColor: 'bg-orange-50 dark:bg-orange-900/20',
+      barColor: 'bg-orange-600',
       skills: [
-        { name: 'VS Code', level: 95, icon: '💻' },
-        { name: 'IntelliJ', level: 85, icon: '🔧' },
-        { name: 'Android Studio', level: 80, icon: '📱' },
-        { name: 'Figma', level: 88, icon: '🎨' },
-        { name: 'Git', level: 90, icon: '🌿' },
-        { name: 'Adobe Suite', level: 75, icon: '🎭' }
+        { name: 'VS Code', level: 95, icon: '/icons/skills/vscode.png', fallback: '💻' },
+        { name: 'IntelliJ', level: 85, icon: '/icons/skills/intellij.png', fallback: '🔧' },
+        { name: 'Android Studio', level: 80, icon: '/icons/skills/android-studio.png', fallback: '🤖' },
+        { name: 'Figma', level: 88, icon: '/icons/skills/figma.png', fallback: '🎨' },
+        { name: 'Git', level: 90, icon: '/icons/skills/git.png', fallback: '🔀' },
+        { name: 'Adobe Suite', level: 75, icon: '/icons/skills/adobe.png', fallback: '🎭' }
       ]
     }
   ];
@@ -130,16 +158,20 @@ export function InteractiveSkills() {
             >
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-2">
-                  <span className="text-xl">{skill.icon}</span>
+                  <SkillIcon 
+                    src={skill.icon} 
+                    alt={skill.name} 
+                    fallback={skill.fallback || skill.icon} 
+                  />
                   <span className="font-medium text-gray-900 dark:text-white">
                     {skill.name}
                   </span>
                 </div>
-                <Badge variant="secondary">{skill.level}%</Badge>
+                <Badge className="bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200">{skill.level}%</Badge>
               </div>
               <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                 <motion.div
-                  className={`h-2 rounded-full ${selectedCategoryData.color.replace('text-', 'bg-')}`}
+                  className={`h-2 rounded-full ${selectedCategoryData.barColor}`}
                   initial={{ width: 0 }}
                   animate={{ width: `${skill.level}%` }}
                   transition={{ duration: 1, delay: index * 0.1 }}

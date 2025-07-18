@@ -14,7 +14,7 @@ export function Skills() {
       id: 'frameworks',
       title: 'Frameworks & Libraries',
       icon: <Wrench className="w-5 h-5 text-green-600" />,
-      skills: ['Laravel', 'Next.js', 'React', 'Flutter', 'TensorFlow', 'Scikit-learn', 'Pandas']
+      skills: ['Laravel', 'Next.js', 'Flutter', 'TensorFlow', 'Scikit-learn', 'Pandas']
     },
     {
       id: 'soft-skills',
