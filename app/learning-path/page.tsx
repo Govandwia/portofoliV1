@@ -189,7 +189,6 @@ export default function LearningPath() {
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-2xl font-bold">Penyambutan Mahasiswa Baru TRPL UGM 2025</h1>
-              <p className="text-sm opacity-80">Govan Dwi Aditya - Semester 5</p>
             </div>
             <div className="flex items-center gap-2">
               <Clock className="w-5 h-5" />
