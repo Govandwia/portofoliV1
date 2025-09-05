@@ -16,8 +16,8 @@ export function Navigation() {
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
     { href: '/projects', label: 'Projects' },
-    { href: '/learning-path', label: 'Learning Path' },
     { href: '/experience', label: 'Experience' },
+    { href: '/learning-path', label: 'Learning Path' },
     { href: '/contact', label: 'Contact' },
   ];
 

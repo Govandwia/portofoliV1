@@ -35,7 +35,7 @@ export default function LearningPath() {
     {
       id: 'intro',
       title: 'Perjalanan Mahasiswa TRPL UGM',
-      subtitle: 'Govan Dwi Aditya - Semester 5',
+      subtitle: '',
       content: 'Halo teman-teman angkatan 2025! Saya Govan, dan ini adalah cerita perjalanan saya selama berkuliah di D4 TRPL UGM. Semoga bisa memberikan gambaran dan inspirasi untuk kalian semua!',
       icon: <BookOpen className="w-12 h-12" />,
       type: 'intro',
