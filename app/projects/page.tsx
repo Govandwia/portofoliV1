@@ -27,6 +27,36 @@ export default function Projects() {
       }
     },
     {
+      id: 'dashboard-keuangan-tdg',
+      title: 'Dashboard Keuangan PT TDG',
+      subtitle: 'Financial Management Dashboard',
+      description: 'A comprehensive financial dashboard for PT TDG featuring real-time financial analytics, budget tracking, expense management, and interactive data visualizations for better financial decision making.',
+      icon: <Brain className="w-6 h-6" />,
+      technologies: ['Next.js', 'Laravel', 'MySQL', 'Chart.js', 'Tailwind CSS'],
+      roles: ['System Analyst', 'Project Manager'],
+      githubUrl: '#'
+    },
+    {
+      id: 'appiks',
+      title: 'APPIKS (Aplikasi Pencegahan Bullying dan Intoleransi)',
+      subtitle: 'Student Mood Tracking & Anti-Bullying System',
+      description: 'A comprehensive mobile application designed to prevent bullying and intolerance in high schools by tracking student moods, detecting behavioral patterns, and providing early intervention mechanisms for creating a safer school environment.',
+      icon: <Smartphone className="w-6 h-6" />,
+      technologies: ['Next.js', 'Laravel', 'MySQL', 'TypeScript', 'API Integration'],
+      roles: ['System Analyst', 'Project Manager'],
+      githubUrl: '#'
+    },
+    {
+      id: 'crm-inviro',
+      title: 'CRM Apps PT INVIRO',
+      subtitle: 'Customer Relationship Management System',
+      description: 'A powerful CRM application for PT INVIRO to manage customer relationships, track sales pipeline, automate marketing campaigns, and analyze customer data for improved business outcomes.',
+      icon: <Heart className="w-6 h-6" />,
+      technologies: ['Next.js', 'Laravel', 'MySQL', 'TypeScript', 'API Integration'],
+      roles: ['System Analyst', 'Project Manager'],
+      githubUrl: '#'
+    },
+    {
       id: 'portfolio-v1',
       title: 'Portfolio V1 ',
       subtitle: 'Modern Portfolio Website with Contact System',
