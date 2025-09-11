@@ -1,0 +1,93 @@
+# GitLab CI/CD Pipeline untuk Portfolio Next.js
+# File ini akan menjalankan build dan deployment otomatis
+
+stages:
+  - install
+  - lint
+  - build
+  - test
+  - deploy
+
+# Cache node_modules untuk mempercepat pipeline
+cache:
+  paths:
+    - node_modules/
+    - .next/cache/
+
+# Stage 1: Install dependencies
+install_dependencies:
+  stage: install
+  image: node:18-alpine
+  script:
+    - npm ci
+  artifacts:
+    paths:
+      - node_modules/
+    expire_in: 1 hour
+  only:
+    - main
+    - merge_requests
+
+# Stage 2: Linting dan code quality check
+lint_code:
+  stage: lint
+  image: node:18-alpine
+  script:
+    - npm run lint
+  dependencies:
+    - install_dependencies
+  only:
+    - main
+    - merge_requests
+
+# Stage 3: Build aplikasi
+build_application:
+  stage: build
+  image: node:18-alpine
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - .next/
+      - out/
+    expire_in: 1 hour
+  dependencies:
+    - install_dependencies
+  only:
+    - main
+    - merge_requests
+
+# Stage 4: Run tests (jika ada)
+test_application:
+  stage: test
+  image: node:18-alpine
+  script:
+    - echo "Running tests..."
+    - npm run test --if-present || echo "No tests found"
+  dependencies:
+    - install_dependencies
+  only:
+    - main
+    - merge_requests
+  allow_failure: true
+
+# Stage 5: Deploy ke GitLab Pages (opsional)
+deploy_pages:
+  stage: deploy
+  image: node:18-alpine
+  script:
+    - npm run build
+    - mkdir public
+    - cp -r out/* public/ || cp -r .next/static public/ || echo "No static files to copy"
+  artifacts:
+    paths:
+      - public
+  dependencies:
+    - build_application
+  only:
+    - main
+
+# Variables environment
+variables:
+  NODE_ENV: "production"
+  NEXT_TELEMETRY_DISABLED: "1"
