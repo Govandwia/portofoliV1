@@ -4,35 +4,24 @@ import { Briefcase, Calendar, MapPin } from 'lucide-react';
 
 export default function Experience() {
   const experiences = [
-    // --- Current Experiences ---
+    // --- CURRENT POSITIONS (Still Working) ---
     {
-      id: 'project-manager-fundation',
-      title: 'Project Manager',
-      company: 'FUNDation',
-      period: '2024 - Present',
-      location: 'Universitas Gadjah Mada',
-      type: 'Project Leadership',
-      description: 'Leading a team in the development of FUNDation, an application connecting event organizers with industry partners for sponsorship opportunities.',
-      achievements: [
-        'Managing the project timeline to ensure tasks are completed on time.',
-        'Collaborating with various stakeholders, including sponsors and event organizers.'
-      ],
-      skills: ['Project Management', 'Team Leadership', 'Stakeholder Communication', 'Timeline Management']
-    },
-    {
-      id: 'lab-assistant-algo',
-      title: 'Lab Assistant for Algorithms and Data Structures',
-      company: 'Universitas Gadjah Mada',
+      id: 'cto-novaren',
+      title: 'Chief Technology Officer (CTO)',
+      company: 'PT Novaren Tech Indo',
       period: '2025 - Present',
-      location: 'Yogyakarta, Indonesia',
-      type: 'Academic Role',
-      description: 'Assisting lecturers and students in practical lab sessions for Algorithms and Data Structures.',
+      location: 'Indonesia',
+      type: 'Executive Leadership',
+      description: 'Leading technology strategy and innovation as Chief Technology Officer, overseeing all technical aspects of product development and technology infrastructure.',
       achievements: [
-        'Creating practical lab modules and programming assignments.',
-        'Explaining fundamental programming concepts to students.',
-        'Supervising lab sessions and providing constructive feedback on assignments.'
+        'Defining and executing comprehensive technology roadmap and strategic vision.',
+        'Leading engineering teams and establishing best practices for software development.',
+        'Architecting scalable technology solutions and system infrastructure.',
+        'Driving innovation initiatives and evaluating emerging technologies.',
+        'Overseeing product development lifecycle from conception to deployment.',
+        'Establishing technical standards, coding practices, and quality assurance protocols.'
       ],
-      skills: ['Data Structures', 'Algorithms', 'Mentoring', 'Problem Solving', 'Java', 'Python']
+      skills: ['Technology Strategy', 'Team Leadership', 'Software Architecture', 'Product Development', 'Innovation Management', 'Technical Leadership', 'Strategic Planning', 'System Design']
     },
     {
       id: 'sekjen-assets',
@@ -49,39 +38,42 @@ export default function Experience() {
       skills: ['Leadership', 'Strategic Planning', 'Internal Coordination', 'Organizational Management']
     },
     {
-      id: 'social-media-palpod',
-      title: 'Social Media Specialist',
-      company: 'PALPOD UGM',
+      id: 'lab-assistant-komputer-current',
+      title: 'Lab Assistant for Computer Programming (2025)',
+      company: 'Universitas Gadjah Mada',
       period: '2025 - Present',
-      location: 'Universitas Gadjah Mada',
-      type: 'Digital Marketing',
-      description: 'Managing the social media presence and content strategy for PALPOD UGM.',
+      location: 'Yogyakarta, Indonesia',
+      type: 'Academic Role',
+      description: 'Currently supporting the implementation of computer programming labs for students this semester.',
       achievements: [
-        'Determining content schedules and information dissemination strategies.',
-        'Gathering and responding to listener feedback.',
-        'Conducting weekly evaluations for the design and publication team.'
+        'Developing updated lab modules and programming assignments.',
+        'Guiding students through programming concepts and problem-solving.',
+        'Providing mentorship and code review for student projects.'
       ],
-      skills: ['Social Media Management', 'Content Strategy', 'Feedback Analysis', 'Team Evaluation']
+      skills: ['Programming Fundamentals', 'Teaching', 'Code Reviewing', 'Mentoring', 'Java', 'Python']
     },
     {
-      id: 'hustler-gdgoc',
-      title: 'Hustler',
-      company: 'GDGOC UGM',
+      id: 'koordinator-pad',
+      title: 'Coordinator of Basic Application Project (PAD) Assistants',
+      company: 'Universitas Gadjah Mada',
       period: '2025 - Present',
-      location: 'Universitas Gadjah Mada',
-      type: 'Team Formation',
-      description: 'Responsible for analyzing Sustainable Development Goals (SDGs) for team formation purposes.',
+      location: 'Yogyakarta, Indonesia',
+      type: 'Academic Leadership',
+      description: 'Leading and coordinating fellow assistants in the Basic Application Project course, establishing workflows and educational standards.',
       achievements: [
-        'Conducting SDGs analysis to establish effective teams.'
+        'Establishing comprehensive workflow systems for the course curriculum.',
+        'Developing and managing course timelines and milestone schedules.',
+        'Conducting orientation and training sessions for fellow assistants.',
+        'Creating standardized documentation templates for application development projects.',
+        'Coordinating activities among multiple assistant teams to ensure consistency.'
       ],
-      skills: ['Analysis', 'Sustainable Development Goals (SDGs)', 'Team Building', 'Research']
+      skills: ['Team Leadership', 'Curriculum Development', 'Project Coordination', 'Documentation Standards', 'Training & Development', 'Workflow Design']
     },
-    // --- Past Experiences ---
     {
       id: 'humas-komatik',
       title: 'Vice Head of Public Relations (External)',
       company: 'KOMATIK UGM',
-      period: '2024 - Now',
+      period: '2024 - Present',
       location: 'Universitas Gadjah Mada',
       type: 'Public Relations',
       description: 'Managed communications and relationships with external parties to support KOMATIK\'s activities.',
@@ -92,9 +84,73 @@ export default function Experience() {
       ],
       skills: ['Public Relations', 'Partnership Management', 'Branding', 'Communication']
     },
+    
+    // --- COMPLETED EXPERIENCES (Sorted by End Date: Year > Month) ---
+    
+    // 2025
+    {
+      id: 'hustler-gdgoc',
+      title: 'Hustler',
+      company: 'GDGOC UGM',
+      period: '2025',
+      location: 'Universitas Gadjah Mada',
+      type: 'Team Formation',
+      description: 'Responsible for analyzing Sustainable Development Goals (SDGs) for team formation purposes.',
+      achievements: [
+        'Conducting SDGs analysis to establish effective teams.'
+      ],
+      skills: ['Analysis', 'Sustainable Development Goals (SDGs)', 'Team Building', 'Research']
+    },
+    
+    {
+      id: 'lab-assistant-algo',
+      title: 'Lab Assistant for Algorithms and Data Structures (2025)',
+      company: 'Universitas Gadjah Mada',
+      period: '2025',
+      location: 'Yogyakarta, Indonesia',
+      type: 'Academic Role',
+      description: 'Assisting lecturers and students in practical lab sessions for Algorithms and Data Structures.',
+      achievements: [
+        'Creating practical lab modules and programming assignments.',
+        'Explaining fundamental programming concepts to students.',
+        'Supervising lab sessions and providing constructive feedback on assignments.'
+      ],
+      skills: ['Data Structures', 'Algorithms', 'Mentoring', 'Problem Solving', 'Java', 'Python']
+    },
+    {
+      id: 'social-media-palpod',
+      title: 'Social Media Specialist',
+      company: 'PALPOD UGM',
+      period: '2025',
+      location: 'Universitas Gadjah Mada',
+      type: 'Digital Marketing',
+      description: 'Managing the social media presence and content strategy for PALPOD UGM.',
+      achievements: [
+        'Determining content schedules and information dissemination strategies.',
+        'Gathering and responding to listener feedback.',
+        'Conducting weekly evaluations for the design and publication team.'
+      ],
+      skills: ['Social Media Management', 'Content Strategy', 'Feedback Analysis', 'Team Evaluation']
+    },
+    
+    // 2024 Experiences
+    {
+      id: 'project-manager-fundation',
+      title: 'Project Manager',
+      company: 'FUNDation',
+      period: '2024',
+      location: 'Universitas Gadjah Mada',
+      type: 'Project Leadership',
+      description: 'Leading a team in the development of FUNDation, an application connecting event organizers with industry partners for sponsorship opportunities.',
+      achievements: [
+        'Managing the project timeline to ensure tasks are completed on time.',
+        'Collaborating with various stakeholders, including sponsors and event organizers.'
+      ],
+      skills: ['Project Management', 'Team Leadership', 'Stakeholder Communication', 'Timeline Management']
+    },
     {
       id: 'lab-assistant-komputer',
-      title: 'Lab Assistant for Computer Programming',
+      title: 'Lab Assistant for Computer Programming (2024)',
       company: 'Universitas Gadjah Mada',
       period: '2024',
       location: 'Yogyakarta, Indonesia',
@@ -150,6 +206,8 @@ export default function Experience() {
       ],
       skills: ['Social Media Management', 'Live Reporting', 'Public Relations', 'Content Creation']
     },
+    
+    // 2024 (End of year from multi-year positions)
     {
       id: 'staff-kastrad-assets',
       title: 'Staff, Advocacy and Strategic Studies Division (Kastrad)',
@@ -178,6 +236,8 @@ export default function Experience() {
       ],
       skills: ['Event Management', 'Alumni Relations', 'Public Speaking', 'Leadership Training']
     },
+    
+    // 2023
     {
       id: 'yearbook-coordinator',
       title: 'Lead Coordinator for Yearbook Production',
@@ -192,6 +252,8 @@ export default function Experience() {
       ],
       skills: ['Event Management', 'Proposal Writing', 'Collaboration', 'Project Coordination']
     },
+    
+    // 2023 (End of multi-year position)
     {
       id: 'head-of-cohort',
       title: 'Head of Student Cohort 3',
