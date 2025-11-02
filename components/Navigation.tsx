@@ -17,7 +17,6 @@ export function Navigation() {
     { href: '/about', label: 'About' },
     { href: '/projects', label: 'Projects' },
     { href: '/experience', label: 'Experience' },
-    { href: '/learning-path', label: 'Learning Path' },
     { href: '/contact', label: 'Contact' },
   ];
 
